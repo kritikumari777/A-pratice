@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
-export default function DelCom() {
+
+export default function Apigetuser() {
     const [id, setid] = useState('1')
     const [state, setState] = useState([]);
 

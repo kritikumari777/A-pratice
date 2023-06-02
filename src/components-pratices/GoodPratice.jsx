@@ -12,7 +12,6 @@ const GoodPratice = () => {
         setinput("")
     }
 
-
     return (
         <>
             <input onChange={(e) => setinput(e.target.value)}></input>
