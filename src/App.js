@@ -1,5 +1,8 @@
+import { Provider } from "react-redux";
 import "./App.css"
-import ApiCall from "./pratice/apiCall";
+import CakeComponent from "./components/redux/CakeComponent";
+// import ApiCall from "./pratice/apiCall";
+import store from "./redux/store";
 // import ColorChange from "./components-pratices/ColorChange";
 // import ChangeColor from "./pratice/ChangeColor";
 // import Crude from "./pratice/Curd";
@@ -22,6 +25,7 @@ import ApiCall from "./pratice/apiCall";
 
 function App() {
   return (
+    <Provider store={store}>
     <div className="App">
       {/* <Us_Api></Us_Api> */}
       {/* <Ue_Alert></Ue_Alert> */}
@@ -42,9 +46,13 @@ function App() {
       {/* --------------------- */}
       {/* <Crude/> */}
       {/* <ChangeColor/> */}
-      <ApiCall/>
+      {/* <ApiCall/> */}
+      {/* ----------------- */}
+      {/* REDUX */}
+      <CakeComponent/>
 
     </div>
+    </Provider>
   );
 }
 
