@@ -1,13 +1,16 @@
 import "./App.css"
-import ColorChange from "./components-pratices/ColorChange";
+import ApiCall from "./pratice/apiCall";
+// import ColorChange from "./components-pratices/ColorChange";
+// import ChangeColor from "./pratice/ChangeColor";
+// import Crude from "./pratice/Curd";
 //import Dropdown from "./components-pratices/Dropdown";
 // import Us_Api from "./components/Ue_Api";
 //import Ue_Alert from "./components/Ue_Alert";
 //import UmIncresePerfom from "./components/UmIncresePerfom";
-//import UcbParent from "./components/UcbParent";
+// import UcbParent from "./components/UcbParent";
 //import ArrValueDelet from "./components-pratices/ArrValueDelet";
 //import ListInputCRUD from "./components-pratices/ListInputCRUD";
-//import DelCom from "./components/DelCom";
+// import DelCom from "./components/DelCom";
 //import UrDom from "./components/UrDom";
 //import UrStateStore from "./components/UrStateStore";
 // import ApiCall from "./components-pratices/ApiCall";
@@ -35,7 +38,11 @@ function App() {
       {/* <Apigetuser/> */}
       {/* <Sqp1/> */}
       {/* <Dropdown/> */}
-      <ColorChange/>
+      {/* <ColorChange/> */}
+      {/* --------------------- */}
+      {/* <Crude/> */}
+      {/* <ChangeColor/> */}
+      <ApiCall/>
 
     </div>
   );

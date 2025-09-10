@@ -1,0 +1,3 @@
+Shallow copy → only first level copied (untouched), nested still linked. 
+
+Deep copy → everything copied, original untouched. -> JSON.parse(JSON.stringify(obj))
