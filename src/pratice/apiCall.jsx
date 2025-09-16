@@ -1,28 +1,33 @@
-
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const ApiCall = () => {
-   const [data, setData] = useState([])
+  const [content, setContent] = useState([])
+  const [loading, setLoading] = useState(false)
 
-   useEffect(() =>{
-      const getData = async () =>{
-        try{
-            const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
-            setData(res.data)
-        }
-        catch{
-            console.log("ndbf")
-        }
+useEffect(() =>{
+  const fetData =async () => {
+    setLoading(true)
+    try{
+      const res = await axios.get("https://jsonplaceholder.typicode.com/posts")
+      setContent(res.data)
+    } catch{
+      console.log("error")
+    } finally{
+      setLoading(false)
+    }
+  }
+  fetData()
+}, [])
 
-      }
-      getData()
-   }, [])
   return (
     <>
-    <div>{data?.map((item, i) =>{
-        return <div key={i}>{item?.title}</div>
-    })}</div>
+    {loading && <div>loading ''''</div>}
+    {content.map((item, i) =>{
+      return (
+        <div key={i}>{item?.title}</div>
+      )
+    })}
     </>
   )
 }

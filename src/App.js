@@ -1,10 +1,12 @@
-import { Provider } from "react-redux";
+// import { Provider } from "react-redux";
 import "./App.css"
-import CakeComponent from "./components/redux/CakeComponent";
+// import CakeComponent from "./components/redux/CakeComponent";
 // import ApiCall from "./pratice/apiCall";
-import store from "./redux/store";
+import UrNUcNavebar from "./components/UrNUcNavebar";
+// import store from "./redux/store";
+// import DomComp from "./pratice/DomComp";
 // import ColorChange from "./components-pratices/ColorChange";
-// import ChangeColor from "./pratice/ChangeColor";
+// import ChangeCol from "./pratice/changeCol";
 // import Crude from "./pratice/Curd";
 //import Dropdown from "./components-pratices/Dropdown";
 // import Us_Api from "./components/Ue_Api";
@@ -25,7 +27,7 @@ import store from "./redux/store";
 
 function App() {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
     <div className="App">
       {/* <Us_Api></Us_Api> */}
       {/* <Ue_Alert></Ue_Alert> */}
@@ -43,16 +45,21 @@ function App() {
       {/* <Sqp1/> */}
       {/* <Dropdown/> */}
       {/* <ColorChange/> */}
-      {/* --------------------- */}
+      {/* REDUX */}
+      {/* <CakeComponent/> */}
+      <UrNUcNavebar/>
+
+      {/* ------delet---------- */}
       {/* <Crude/> */}
       {/* <ChangeColor/> */}
       {/* <ApiCall/> */}
-      {/* ----------------- */}
-      {/* REDUX */}
-      <CakeComponent/>
-
+      {/* <DomComp/> */}
+      {/* <ChangeCol/> */}
+      {/* -----delet---------- */}
+   
+     
     </div>
-    </Provider>
+    // </Provider>
   );
 }
 

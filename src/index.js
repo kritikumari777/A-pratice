@@ -9,5 +9,10 @@ root.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
+  
+  // useReducer and useContext
+  // <UrNUcStateManage>
+  //   <App />
+  // </UrNUcStateManage>
 );
 

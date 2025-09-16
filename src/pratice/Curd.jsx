@@ -1,35 +1,58 @@
 import { useState } from "react"
 
-const Crude = () =>{
-    const [name, setName] = useState('')
-    const [desplayName, SetDisplayName] = useState([])
+const Crude = () => {
+  const [name, setName] = useState("")
+  const [displayName, setDisplayName] = useState([])
+  const [editId, setEditId] = useState(null)
 
-    const handleSubmit = () =>{
-        SetDisplayName([...desplayName ,name])
-        SetDisplayName((prev) => ({...prev, desplayName: name}))
-        setName('')
-    
+  const handleSubmit = () => {
+    if (!name.trim()) return
+
+    if (editId !== null) {
+      // Update
+      const updatedUser = [...displayName]
+      updatedUser[editId] = name
+      setDisplayName(updatedUser)
+      setEditId(null)
+    } else {
+      // Create
+      setDisplayName([...displayName, name])
     }
-    const handleDelet = (item) =>{
-         const res = desplayName?.filter((v, index) =>{
-           return v !== item
-         })
-         SetDisplayName(res)
-    }
-    return (
-        <div>
-            <input value={name} type="text" onChange={(e) => setName(e.target.value)} />
-            <button onClick={handleSubmit} >Submit</button>
-            <div>
-            {desplayName.map((item, i) =>{
-               return <>
-               <div key={i}>{item}</div> 
-               <button onClick={() => handleDelet(item)} >delet</button>
-               </>
-            })}
-            </div>
-        </div>
-    )
+    setName("")
+  }
+
+  const handleDelete = (i) => {
+    // Delet
+    setDisplayName(displayName.filter((_, index) => index !== i))
+  }
+
+  const handleEdit = (i) => {
+    setName(displayName[i])
+    setEditId(i)
+  }
+
+  return (
+    <div>
+      <input
+        value={name}
+        type="text"
+        onChange={(e) => setName(e.target.value)}
+      />
+      <button onClick={handleSubmit}>
+        {editId !== null ? "Update" : "Add"}
+      </button>
+
+      <div>
+        {displayName.map((item, i) => (
+          <div key={i}>
+            {item}
+            <button onClick={() => handleEdit(i)}>Edit</button>
+            <button onClick={() => handleDelete(i)}>Delete</button>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default Crude

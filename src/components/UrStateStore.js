@@ -5,7 +5,7 @@
 // its called pure function which accept state and action and return a new state
 //pure function doesnot produce any side-effects
 // the pure function always return the same output if the same arguments are passed in
-//  // how we can do same wirh useReducer instance of useState
+// how we can do same wirh useReducer instance of useState
 
 
 import React, { useReducer } from 'react'
