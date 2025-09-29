@@ -1,5 +1,7 @@
 import { Provider } from "react-redux";
 import "./App.css"
+import Table from "./components-pratices/TableDataMap";
+import TestComp from "./testing/TestComp";
 // import GoogleSearch from "./components-pratices/GoogleSearch";
 // import PaginatedList from "./components-pratices/PaginatedList";
 // import PaginationApi from "./components-pratices/PaginationApi";
@@ -7,9 +9,9 @@ import "./App.css"
 
 // import ApiCall from "./pratice/apiCall";
 // import UrNUcNavebar from "./components/UrNUcNavebar";
-import store from "./redux/store";
-import IceComponent from "./components/redux/IceComponent";
-import CakeComponent from "./components/redux/CakeComponent";
+// import store from "./redux/store";
+// import IceComponent from "./components/redux/IceComponent";
+// import CakeComponent from "./components/redux/CakeComponent";
 // import DomComp from "./pratice/DomComp";
 // import ColorChange from "./components-pratices/ColorChange";
 // import ChangeCol from "./pratice/changeCol";
@@ -33,7 +35,7 @@ import CakeComponent from "./components/redux/CakeComponent";
 
 function App() {
   return (
-    <Provider store={store}>
+    // <Provider store={store}>
     <div className="App">
       {/* <Us_Api></Us_Api> */}
       {/* <Ue_Alert></Ue_Alert> */}
@@ -51,12 +53,16 @@ function App() {
       {/* <Sqp1/> */}
       {/* <Dropdown/> */}
       {/* <ColorChange/> */}
-
+      {/* <Table/> */}
       {/*--------- REDUX -----------*/}
-      <CakeComponent/>
-      <IceComponent/>
+      {/* <CakeComponent/> */}
+      {/* <IceComponent/> */}
        {/*--------- REDUX -----------*/}
-       
+
+       {/* --------- TEST__________ */}
+       <TestComp/>
+        {/* --------- TEST__________ */}
+        
       {/* <UrNUcNavebar/> */}
       {/* <GoogleSearch/> */}
       {/* <PaginatedList/> */}
@@ -72,7 +78,7 @@ function App() {
    
      
     </div>
-  </Provider>
+  // </Provider>
   );
 }
 
