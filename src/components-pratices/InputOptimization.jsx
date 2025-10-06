@@ -1,45 +1,49 @@
-import { useState } from 'react'
+import { useState } from "react";
 
 const InputOptimization = () => {
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: "",
+    company: "",
+    profile: "",
+    salary: "",
+    joiningDate: "",
+    roll: "",
+    teammanager: "",
+    teamleader: "",
+  });
 
-    const [user, setUser] = useState({
+  const handleChange = (e) => {
+    setUser((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-        name: "",
-        email: "",
-        phone: "",
-        address: "",
-        company: "",
-        profile: "",
-        salary: "",
-        joiningdata: "",
-        roll: "",
-        teammanager: "",
-        teamleder: ""
-    })
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted:", user);
+  };
 
-    const handleChange = (e) => {
-        setUser(prev => ({ ...prev, [e.target.name]: e.target.value }))
-    }
+  return (
+    <div style={{ padding: "1rem" }}>
+      <form onSubmit={handleSubmit} className="flex flex-col gap-2">
+        {Object.keys(user).map((key) => (
+          <input
+            key={key}
+            type="text"
+            name={key}
+            onChange={handleChange}
+            value={user[key]}
+            placeholder={key.replace(/([A-Z])/g, " $1").toLowerCase()}
+          />
+        ))}
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+};
 
-    console.log(user)
-    return (
-        <div>
-            <form>
-                <input type="text" name="name" onChange={handleChange} placeholder='Name'></input>
-                <input type="text" name="email" onChange={handleChange} placeholder='email'></input>
-                <input type="text" name="phone" onChange={handleChange} placeholder='phome'></input>
-                <input type="text" name="address" onChange={handleChange} placeholder='address'></input>
-                <input type="text" name="company" onChange={handleChange} placeholder='company'></input>
-                <input type="text" name="profile" onChange={handleChange} placeholder='profile'></input>
-                <input type="text" name="salary" onChange={handleChange} placeholder='salary'></input>
-                <input type="text" name="joiningdate" onChange={handleChange} placeholder='joining date'></input>
-                <input type="text" name="roll" onChange={handleChange} placeholder='roll'></input>
-                <input type="text" name="teammanager" onChange={handleChange} placeholder='team manager'></input>
-                <input type="text" name="teamleder" onChange={handleChange} placeholder='team leder'></input>
-                <button>Sumbit</button>
-            </form>
-        </div>
-    )
-}
-
-export default InputOptimization
+export default InputOptimization;

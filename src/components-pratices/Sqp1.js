@@ -1,27 +1,35 @@
 import { useEffect, useState } from "react";
+import axios from "axios";
 
-import axiox from 'axios'
 function Sqp1() {
-
-  const [Items, setItems] = useState([])
-  const [dispach, setDispach] = useState('posts')
+  const [items, setItems] = useState([]);
+  const [dispatch, setDispatch] = useState("posts");
 
   useEffect(() => {
-    axiox.get(`https://jsonplaceholder.typicode.com/${dispach}`)
+    axios
+      .get(`https://jsonplaceholder.typicode.com/${dispatch}`)
       .then((res) => {
-        setItems(res.data)
-        console.log(JSON.stringify(res.data))
-      }).catch(err => {
-        console.log("somthing wrong")
+        setItems(res.data);
+        console.log(res.data);
+      })
+      .catch(() => {
+        console.log("Something went wrong");
       });
-  }, [dispach]);
-  
-  return <div>
-    <button onClick={() => setDispach('posts')}>Click me </button>
+  }, [dispatch]);
+
+  return (
     <div>
-    {Items.map((item, index) => (  <li key={index}>{item.id} </li>))}
+      <button onClick={() => setDispatch("posts")}>Posts</button>
+      <button onClick={() => setDispatch("users")}>Users</button>
+      <button onClick={() => setDispatch("comments")}>Comments</button>
+
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.id} - {item.title || item.name}</li>
+        ))}
+      </ul>
     </div>
-  </div>;
+  );
 }
 
-export default Sqp1
+export default Sqp1;
