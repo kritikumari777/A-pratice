@@ -99,15 +99,46 @@ import { returnFun } from "./helper";
 
 // multiple element test by role
 
-test("role of element same", async () => {
+// test("role of element same", async () => {
+//   render(<TestComp/>)
+
+//   const btn1 = await screen.findByRole("button", {name: "Click 1"})
+//   expect(btn1).toBeInTheDocument()
+
+//   const btn2 = await screen.findByRole("button", {name: "Click 2"})
+//   expect(btn2).toBeInTheDocument()
+
+//   const div1 = await screen.findByRole("forTesting")
+//   expect(div1).toBeInTheDocument()
+// })
+
+// or getAllRoleBy to test multiple element
+
+// test("Test multiple element getAllByRole()", () => {
+//    render(<TestComp/>)
+
+//    const buts = screen.getAllByRole("button")  // return array of element
+
+//    for(let i=0; i<buts.length; i++){
+//     expect(buts[i]).toBeInTheDocument()
+//    }
+   
+// })
+
+// test dropdown with getAllByRole()
+
+// test("test options", () => {
+//   render(<TestComp/>)
+//   const opts = screen.getAllByRole("option")
+//   for(let i=0; i<opts.length; i++){
+//     expect(opts[i]).toBeInTheDocument()
+//   }
+// })
+
+test("checkbox - getByLableText()" , () => {
   render(<TestComp/>)
+  const lab = screen.getByLabelText("checkbox") // by lable name
+  expect(lab).toBeInTheDocument()
 
-  const btn1 = await screen.findByRole("button", {name: "Click 1"})
-  expect(btn1).toBeInTheDocument()
-
-  const btn2 = await screen.findByRole("button", {name: "Click 2"})
-  expect(btn2).toBeInTheDocument()
-
-  const div1 = await screen.findByRole("forTesting")
-  expect(div1).toBeInTheDocument()
 })
+

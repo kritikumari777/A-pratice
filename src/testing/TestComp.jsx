@@ -45,7 +45,19 @@ const TestComp = () => {
         <input id="input2" />
         <div role='forTesting'>need to define role for test</div>
         </div>
-    </div>
+        <div>
+          <select>
+            <option>ksdf</option>
+            <option>ksadsdf</option>
+            <option>ksadsdf</option>
+            <option>ksasfsdf</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor='check'>checkbox</label>
+          <input type='checbox' id="check" defaultChecked={true} />
+        </div>
+    </div> 
   )
 }
 
