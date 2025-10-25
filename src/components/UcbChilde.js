@@ -2,12 +2,12 @@
 
 import { memo } from 'react'
 
-function UcbChilde({ todo, addNewTodo }) {
+function UcbChilde({ handleIncrease}) {
 
     console.log("its a child component")
     return (
-        <div>
-            its a child class {todo} {addNewTodo}
+        <div >
+            <button onClick={handleIncrease}>Click</button>
         </div>
     )
 }
