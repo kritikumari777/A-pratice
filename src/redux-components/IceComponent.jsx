@@ -1,5 +1,5 @@
 import {useDispatch, useSelector } from 'react-redux'  // secound Method
-import { byIce } from '../../redux/ice/iceAction'
+import { byIce } from '../redux/ice/iceAction'
 
 const IceComponent = () => {
 

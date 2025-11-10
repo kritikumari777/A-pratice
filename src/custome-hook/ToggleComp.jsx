@@ -1,5 +1,6 @@
 import React from 'react'
-import useToggle from './UseToggle'
+import useToggle from './useToggles'
+
 
 const ToggleComp = () => {
     const[isOpen, openToggle] = useToggle(false)

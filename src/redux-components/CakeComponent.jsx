@@ -1,4 +1,4 @@
-import { byCake } from '../../redux/cake/cakeAction'
+import { byCake } from '../redux/cake/cakeAction'
 import { connect} from 'react-redux'
 const CakeComponent = (props) => {
 
