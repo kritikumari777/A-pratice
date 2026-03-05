@@ -1,0 +1,42 @@
+{
+        "title" : "USER DETAIL",
+        "header": [
+         {"key": "name", "label":"NAME"},
+         {"key": "email", "label":"EMAIL"}
+        ],
+        "user": [
+                {
+                        "name": "kriti",
+                        "email": "123kritikumari@gmail.com"
+                },
+                {
+                        "name": "fdariti",
+                        "email": "kritikumari@gmail.com"
+                },
+                {
+                        "name": "kriti",
+                        "email": "kumari@gmail.com"
+                },
+                {
+                        "name": "priti",
+                        "email": "itikumari@gmail.com"
+                },
+                {
+                        "name": "dfriti",
+                        "email": "ikumari@gmail.com"
+                },
+                {
+                        "name": "driti",
+                        "email": "kritikumari@gmail.com"
+                },
+                {
+                        "name": "driti",
+                        "email": "kumari@gmail.com"
+                },
+                {
+                        "name": "kriti",
+                        "email": "mari@gmail.com"
+                }
+        ],
+        "footer": "TOTLE USER"
+}

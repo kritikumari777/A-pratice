@@ -4,18 +4,14 @@ export default function Apigetuser() {
     const [id, setid] = useState('1')
     const [state, setState] = useState([]);
 
-    const handleClick = async () =>{
-
-        try{
-            
-            const data = await ( await fetch(`https://jsonplaceholder.typicode.com/albums/${id}`)).json()
+    const handleClick = async () => {
+        try {
+            const { data } = await axios.get(`https://jsonplaceholder.typicode.com/albums/${id}`)
             setState(data)
-        }
-        catch (err){
-           console.log(err.message)
+        } catch (error) {
+            console.error(error.response?.data)
         }
     }
-
     function checkResponse(data) {
         if (data) {
             console.log(data)
@@ -27,9 +23,9 @@ export default function Apigetuser() {
 
     return (
         <div>
-            <input placeholder="enter the id" value={id} onChange={(e) => setid(e.target.value)}/>
-            <button type='submit' onClick={handleClick}>Search</button>   
-           {checkResponse(state)}
+            <input placeholder="enter the id" value={id} onChange={(e) => setid(e.target.value)} />
+            <button type='submit' onClick={handleClick}>Search</button>
+            {checkResponse(state)}
         </div>
     );
 }

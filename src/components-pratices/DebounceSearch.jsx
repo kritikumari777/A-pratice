@@ -1,38 +1,30 @@
 import React, { useEffect, useState } from 'react'
 
-const GoogleSearch = () => {
-
-    const [inputValue, setInputValue] = useState("")
+const DebounceSearch = () => {
+    const [input, setInput] = useState("")
     const [result, setResult] = useState([])
 
     useEffect(() => {
-        const getRes = setTimeout(() => {
-            if(!inputValue.trim()){
-                setResult([])
-                return
-            }
 
-         fetch(`https://api.github.com/search/users?q=${inputValue}`)
-         .then((res) => res.json())
-         .then((data) => {
-            console.log(data)
-            setResult(data.items)
-        })
-         .catch((err) => console(err))
-        }, 500)
+        const data = setTimeout(() => {
+             fetch(`https://api.github.com/search/users?q=${input}`)
+             .then(res => res.json())
+             .then(value => setResult(value?.items))
+             .catch(err => console.error(err))
+        }, 500);
+        console.log(result)
+        return () => window.clearTimeout(data)
 
-        return () => window.clearTimeout(getRes)
-    }, [inputValue])
+    }, [input])
+
   return (
     <div>
-    <input placeholder='search' value={inputValue} type='text' onChange={(e) => setInputValue(e.target.value)}/>
-    {result?.map((item, index) => {
-        return (
-            <div key={item?.value}>{item?.login}</div>
-        )
-    })}
+        <input type='text' placeholder='Searched ....' value={input} name={input} onChange={(e) => setInput(e.target.value)}/>
+        {result?.map((items, i) => (
+            <div key={i}>{items?.login}</div>
+        ))}
     </div>
   )
 }
 
-export default GoogleSearch
+export default DebounceSearch

@@ -2,8 +2,8 @@ import { Provider } from "react-redux";
 import "./App.css"
 
 import store from "./redux/store";
-import CakeComponent from "./components-redux/CakeComponent";
-import IceComponent from "./components-redux/IceComponent";
+import CakeComponent from "./redux-components/CakeComponent";
+import IceComponent from "./redux-components/IceComponent";
 
 
 function App() {

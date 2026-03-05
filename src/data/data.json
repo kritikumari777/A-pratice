@@ -1,0 +1,43 @@
+[
+    {
+        "header": "User From",
+        "fildes": [
+            {
+                "id": 1,
+                "label": "Name",
+                "placeholder": "Please enter the name",
+                "type": "text"
+            },
+            {
+                "id": 2,
+                "label": "Email",
+                "placeholder": "Please enter the email",
+                "type": "text"
+            },
+            {
+                "id": 3,
+                "label": "Password",
+                "placeholder": "Please enter the password",
+                "type": "password"
+            },
+            {
+                "id": 4,
+                "label": "Phone",
+                "placeholder": "Please enter the phone",
+                "type": "number"
+            },
+            {
+                "id": 5,
+                "label": "Gender",
+                "placeholder": "Please enter the gender",
+                "type": "checkbox",
+                "genderfilds": [
+                    {
+                        "female": "Female",
+                        "mail": "Mail"
+                    }
+                ]
+            }
+        ]
+    }
+]

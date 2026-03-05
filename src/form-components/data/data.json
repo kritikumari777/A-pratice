@@ -1,0 +1,54 @@
+[
+    {
+        "name": "name",
+        "label": "Name",
+        "type": "text",
+        "placeholder": "Enter name",
+        "required": true,
+        "error":"Name is required"
+    },
+    {
+        "name": "email",
+        "label": "Email",
+        "type": "text",
+        "placeholder": "Enter email",
+        "required": true,
+        "pattern": "^\\S+@\\S+\\.\\S+$",
+        "error": "Invalid Email Adderess"
+    },
+    {
+        "name": "gender",
+        "label": "Gender",
+        "type": "checkbox",
+        "options": ["Male", "Female"],
+        "required": true,
+         "error":"gender is required"
+    },
+    {
+        "name": "skills",
+        "label": "Skills",
+        "type": "select",
+        "options": ["Select","React", "Java", "Python", "Next js"],
+        "placeholder": "Select Skill",
+        "required": true,
+         "error":"skills is required"
+    },
+    {
+        "name": "phone",
+        "label": "Phone",
+        "type": "tel",
+        "placeholder": "Enter phone no",
+        "required": true,
+        "pattern": "^[0-9]{10}$",
+        "error":"Phone number must be 10 digits"
+
+    },
+    {
+        "name": "sex",
+        "label": "Are you 18+",
+        "type": "radio",
+        "options": ["Yes", "No"],
+        "required": true,
+         "error":"sex is required"
+    }
+]
