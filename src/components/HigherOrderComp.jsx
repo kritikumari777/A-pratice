@@ -1,4 +1,4 @@
-import withBg from './withBg'
+import withBGHOC from './withBgHOC'
 
 const HigherOrderComp = () => {
   return (
@@ -6,4 +6,4 @@ const HigherOrderComp = () => {
   )
 }
 
-export default withBg(HigherOrderComp)
+export default withBGHOC(HigherOrderComp)
